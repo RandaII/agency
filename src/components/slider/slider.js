@@ -73,28 +73,43 @@ const Slider = ({children: items, buttonRef}) =>{
     setScroll(id * -300);
   }
 
-  // handler для свапов, назначает исходные координаты
-  const onPointerDown  = (evt) =>{
-    evt.preventDefault();
-    setCoord(evt.clientX);
+  // handler для свайпов, назначает исходные координаты, можно использовать как для pointer, так и для touch событий
+  const swipeDownHandler  = (evt) =>{
+    const clientX = evt.clientX || evt.touches[0].clientX;
+    (!evt.touches?.[0].clientX) && evt.preventDefault();
+    setCoord(clientX);
   }
 
-  // handler для свапов, листает слайдер в нужную сторону, в зависимости от конечных координат
-  const onPointerUp = (evt) =>{
-    if (evt.clientX < coord){
-      setItemAndScroll(undefined, true)
-    }
-    else {
-      setItemAndScroll(setItemAndScroll(undefined, false));
+  // handler для свайпов, листает слайдер в нужную сторону, в зависимости от конечных координат, можно использовать как для pointer, так и для touch событий
+  const swipeUpHandler = (evt) =>{
+    const clientX = evt.clientX || evt.changedTouches[0].clientX;
+
+    // для обработки ложных срабатываний
+    if (Math.abs(clientX - coord) > 30){
+      if (clientX < coord){
+        setItemAndScroll(undefined, true)
+      }
+      else {
+        setItemAndScroll(setItemAndScroll(undefined, false));
+      }
     }
   }
+
+  const sliderStyle = {
+    transform: `translateX(${scroll}px)`
+  };
 
   return (
     <div className="image-slider accent">
-      <div className="image-slider__wrapper" ref={sliderBlock}>
-        <ul className="image-slider__list" style={{
-          transform: `translateX(${scroll}px)`
-        }} onPointerDown={onPointerDown} onPointerUp={onPointerUp}>
+      <div
+        className="image-slider__wrapper"
+        ref={sliderBlock}
+        onPointerDown={swipeDownHandler}
+        onPointerUp={swipeUpHandler}
+        onTouchStart={swipeDownHandler}
+        onTouchEnd={swipeUpHandler}>
+
+        <ul className="image-slider__list" style={sliderStyle}>
           {<SliderItems onClick={TabHandler}>{items}</SliderItems>}
         </ul>
       </div>
