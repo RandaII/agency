@@ -2,6 +2,7 @@ import React from "react";
 import "./get-started.scss";
 
 import getStarted from "../../images/slides/get-started.png";
+import getStartedWebp from "../../images/slides/get-started.webp";
 import getStartedIcon from "../../images/icons/get-started.svg";
 
 const GetStarted = () =>{
@@ -16,7 +17,10 @@ const GetStarted = () =>{
             <a className="action-button orange">Contact Us</a>
           </div>
           <div className="advertising-card__wrapper">
-            <img src={getStarted} alt="slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={getStartedWebp}/>
+              <img src={getStarted} alt="slide image"/>
+            </picture>
           </div>
           <img className="advertising-card__decorate-image" src={getStartedIcon} alt="decorate image"/>
         </div>

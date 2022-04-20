@@ -2,6 +2,7 @@ import React from "react";
 import "./founder-words.scss";
 
 import founder from "../../images/slides/founder.png";
+import founderWebp from "../../images/slides/founder.webp";
 import blockquote from "../../images/icons/blockquote.svg";
 
 const FounderWords = () =>{
@@ -19,7 +20,10 @@ const FounderWords = () =>{
             <img src={blockquote} alt="decorate element" className="text-block__decor"/>
           </div>
           <div className="bg-image">
-            <img className="left" src={founder} alt="slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={founderWebp}/>
+              <img className="left" src={founder} alt="slide image"/>
+            </picture>
           </div>
         </div>
       </div>

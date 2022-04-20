@@ -2,6 +2,7 @@ import React from "react";
 import "./features.scss";
 
 import features from "../../images/slides/features.png";
+import featuresWebp from "../../images/slides/features.webp";
 
 const Features = () =>{
   return (
@@ -21,7 +22,10 @@ const Features = () =>{
             </ul>
           </div>
           <div className="bg-image">
-            <img src={features} alt="Slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={featuresWebp}/>
+              <img src={features} alt="Slide image"/>
+            </picture>
           </div>
         </div>
       </div>

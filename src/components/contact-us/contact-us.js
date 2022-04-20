@@ -2,6 +2,7 @@ import React from "react";
 import "./contact-us.scss";
 
 import dreamProject from "../../images/slides/dream-project.png";
+import dreamProjectWebp from "../../images/slides/dream-project.webp";
 
 const ContactUs = () =>{
   return (
@@ -19,7 +20,10 @@ const ContactUs = () =>{
               </div>
             </div>
             <div className="bg-image">
-              <img src={dreamProject} alt="slide image"/>
+              <picture>
+                <source type="image/webp" srcSet={dreamProjectWebp}/>
+                <img src={dreamProject} alt="slide image"/>
+              </picture>
             </div>
           </div>
         </div>

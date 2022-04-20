@@ -3,6 +3,7 @@ import "./modern-studio.scss";
 
 import meta from "../../images/avatars/meta.png";
 import modernStudio from "../../images/slides/modern-studio.png";
+import modernStudioWebp from "../../images/slides/modern-studio.webp";
 import star from "../../images/icons/star3.svg";
 
 const ModernStudio = () =>{
@@ -29,7 +30,10 @@ const ModernStudio = () =>{
             <img src={star} alt="Decor" className="text-block__decor"/>
           </div>
           <div className="bg-image">
-            <img src={modernStudio} alt="slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={modernStudioWebp}/>
+              <img src={modernStudio} alt="slide image"/>
+            </picture>
           </div>
         </div>
       </  div>

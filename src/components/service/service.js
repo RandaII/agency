@@ -3,6 +3,7 @@ import "./service.scss";
 
 import murtaugh from "../../images/avatars/jenny-murtaugh.png";
 import service from "../../images/slides/service.png";
+import serviceWebp from "../../images/slides/service.webp";
 
 const Service = () =>{
   return (
@@ -27,7 +28,10 @@ const Service = () =>{
             </div>
           </div>
           <div className="bg-image">
-            <img className="left" src={service} alt="slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={serviceWebp}/>
+              <img className="left" src={service} alt="slide image"/>
+            </picture>
           </div>
         </div>
       </div>

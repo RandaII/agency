@@ -2,6 +2,7 @@ import React from "react";
 import "./about.scss";
 
 import about from "../../images/slides/about.png";
+import aboutWebp from "../../images/slides/about.webp";
 
 const About = () =>{
   return (
@@ -19,7 +20,10 @@ const About = () =>{
             <button className="action-button white">About Us</button>
           </div>
           <div className="bg-image">
-            <img src={about} className="left" alt="slide image"/>
+            <picture>
+              <source type="image/webp" srcSet={aboutWebp}/>
+              <img src={about} className="left" alt="slide image"/>
+            </picture>
           </div>
         </div>
       </div>
