@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.events{
+
+  .width-wrapper{
+    @include columnCenter;
+  }
+
+  .text-block{
+    text-align: center;
+  }
+
+  .action-button,
+  .events-calendar{
+    margin-top: 64px;
+  }
+}

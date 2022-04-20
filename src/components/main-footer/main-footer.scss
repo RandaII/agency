@@ -1,0 +1,72 @@
+@import "../../styles/variables";
+
+.main-footer{
+  @include bodyHorizontalPadding;
+
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid #F3D1BF;
+    padding-bottom: 64px;
+  }
+
+  &.main-bgc{
+    .main-footer__title{
+      color: $textDark;
+    }
+  }
+
+  &__title{
+    @include h4;
+  }
+
+  &__copyright{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 43px;
+    padding-bottom: 52px;
+  }
+
+  &__copyright-text{
+    color: $textDarkGray;
+  }
+
+  &__copyright-links{
+    display: flex;
+
+    a:not(:last-child){
+      margin-right: 68px;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .main-footer{
+    &__copyright{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-footer{
+
+    &__wrapper{
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      & > *{
+        margin-top: 35px;
+      }
+    }
+  }
+}
+

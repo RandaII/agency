@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.how-we-work{
+  .slide{
+    justify-content: space-between;
+    padding-bottom: 108px;
+    border-bottom: 1px solid $mainAccentColor;
+  }
+
+  .text-block{
+    max-width: 480px;
+  }
+
+  .numbered-list{
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.how-we-work{
+    padding-top: 94px;
+
+    .numbered-list{
+      margin-top: 0px;
+    }
+
+    .slide{
+      padding-bottom: 70px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.faq{
+  padding-bottom: 16px;
+
+  .slide{
+    flex-wrap: wrap;
+  }
+
+  .text-block{
+    flex: 2 1 250px;
+  }
+
+  .dropdown-list{
+    flex: 3 1 330px;
+  }
+}

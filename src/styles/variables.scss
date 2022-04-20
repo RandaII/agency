@@ -1,0 +1,103 @@
+$mainFont: 'Epilogue', sans-serif;
+$accentColor: #28293E;
+$mainColor: #fdf0e9;
+$mainAccentColor: #F3D1BF;
+$border-radius: 6px;
+$textLightAccent: #EF6D58;
+$textLightGray: rgba(255, 255, 255, 0.64);
+$textDark: rgb(57, 20, 0);
+$textDarkGray: rgba(57, 20, 0, 0.64);
+$orchid: #B550F8;
+$transition: .2s ease-out;
+$boxShadow: 0px 3px 9px rgba(57, 20, 0, 0.18);
+
+@mixin bodyHorizontalPadding {
+  padding-left: var(--bodyHorizontalPadding);
+  padding-right: var(--bodyHorizontalPadding);
+}
+
+@mixin outline ($color, $outline-width: 1px){
+  outline: $outline-width solid $color;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+@mixin smallText{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin mediumText{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+@mixin bigText {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@mixin h1{
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 80px;
+  letter-spacing: -2px;
+}
+
+@mixin h2{
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -1px;
+}
+
+@mixin h3{
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: 800;
+}
+
+@mixin h4{
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+@mixin columnCenter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes rightTranslate {
+
+  0%{
+    transform: translateX(-1500px);
+  }
+
+  40%{
+    transform: translateX(150px);
+  }
+
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rightTranslateReverse {
+
+  0%{
+    transform: translateX(0px);
+  }
+
+  40%{
+    transform: translateX(150px);
+  }
+
+  100%{
+    transform: translateX(-1500px);
+  }
+}

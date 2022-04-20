@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.partners{
+
+  &__container{
+    padding: 72px 0;
+    border-bottom: 1px solid $mainAccentColor;
+  }
+
+  &__list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  li:not(:last-child){
+    margin-right: 10px;
+  }
+
+  &__item{
+    display: block;
+    transition: $transition;
+
+    img{
+      transition: $transition;
+    }
+
+    &:hover img,
+    &:focus img{
+      filter: brightness(.7);
+    }
+
+    &:focus{
+      @include outline($textDarkGray, 2px);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .partners__list{
+    justify-content: center;
+  }
+
+  .partners__container{
+    padding: 50px 0;
+  }
+}

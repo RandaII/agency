@@ -1,0 +1,10 @@
+.pricing{
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 16px;
+
+  .pricing-block{
+    margin-top: 16px;
+  }
+}

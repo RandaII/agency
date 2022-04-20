@@ -1,0 +1,36 @@
+.features-list{
+  padding-bottom: 114px;
+
+  .text-block{
+    margin-top: 76px;
+    max-width: 370px;
+  }
+
+  .cards-list{
+    max-width: 673px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  section.features-list{
+    padding-top: 76px;
+
+    .slide{
+      flex-direction: column;
+    }
+
+    .text-block{
+      margin-top: 0;
+    }
+
+    .cards-list{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.features-list{
+    padding-top: 106px;
+  }
+}

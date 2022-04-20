@@ -1,0 +1,13 @@
+.service-list{
+  padding-bottom: 120px;
+
+  .cards-list{
+    margin-top: 35px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.service-list{
+    padding-top: 80px;
+  }
+}

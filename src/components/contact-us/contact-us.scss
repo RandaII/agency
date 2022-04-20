@@ -1,0 +1,41 @@
+.contact-us{
+  padding-top: 100px;
+  padding-bottom: 80px;
+
+  .text-block{
+    margin-top: 56px;
+
+    &__title{
+      font-size: 72px;
+      line-height: 80px;
+    }
+  }
+
+  .slide{
+    min-width: 0;
+    padding-top: 38px;
+    padding-bottom: 80px;
+    padding-left: 100px;
+    padding-right: 70px;
+  }
+
+  .bg-image{
+    img{
+      max-width: 442px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-us{
+    padding-top: 80px;
+
+    .slide{
+      min-width: 0;
+      padding-top: 38px;
+      padding-bottom: 48px;
+      padding-left: 29px;
+      padding-right: 27px;
+    }
+  }
+}

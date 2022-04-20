@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.testimonials{
+  padding-top: 100px;
+
+  .width-wrapper{
+    @include columnCenter;
+  }
+
+  &-block,
+  .action-button{
+    margin-top: 64px;
+  }
+}

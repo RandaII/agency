@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.portfolio{
+  padding-top: 90px;
+  padding-bottom: 50px;
+
+  .width-wrapper{
+    @include columnCenter;
+  }
+
+  .text-block{
+    text-align: center;
+  }
+
+  .image-cards{
+    margin-top: 68px;
+  }
+
+  .category-nav{
+    margin-top: 35px;
+  }
+
+  .action-button{
+    margin-top: 64px;
+  }
+}

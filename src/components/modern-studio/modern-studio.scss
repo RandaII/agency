@@ -1,0 +1,21 @@
+.modern-studio{
+  padding-bottom: 56px;
+
+  .blockquote{
+    margin-top: 108px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  section.modern-studio{
+    padding-top: 0;
+    padding-bottom: 32px;
+
+    .slide{
+      .blockquote{
+        margin-top: 44px;
+      }
+    }
+  }
+}

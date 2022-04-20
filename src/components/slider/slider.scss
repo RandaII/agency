@@ -1,0 +1,114 @@
+@import "../../styles/variables";
+
+.image-slider{
+
+  &__list{
+    display: flex;
+    gap: 30px;
+    transition: .5s ease-out;
+  }
+
+  &__wrapper{
+    overflow: hidden;
+  }
+
+  &.accent{
+    .image-slider__item{
+      color: #ffffff;
+    }
+  }
+
+  &__img-block{
+    width: 270px;
+    height: 272px;
+    box-sizing: border-box;
+    border: 1px solid #3A3C56;
+    position: relative;
+    border-radius: $border-radius;
+    transition: $transition;
+
+    img{
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  &__item{
+    display: block;
+    pointer-events: none;
+
+    &:focus{
+      outline: none;
+
+      .image-slider__img-block{
+        border-color: white;
+      }
+    }
+  }
+
+  &__title{
+    @include h4;
+    margin-top: 26px;
+    user-select: none;
+  }
+
+  &__description{
+    @include mediumText;
+    color: $textLightGray;
+    margin-top: 3px;
+    user-select: none;
+  }
+
+  &__buttons{
+    text-align: center;
+    margin-top: 50px;
+
+    button{
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      border: 1px solid #4E4F6E;
+      border-radius: 50%;
+      box-sizing: border-box;
+      padding: 0;
+      cursor: pointer;
+      transition: $transition;
+
+      &:not(:last-child){
+        margin-right: 20px;
+      }
+
+      &.active{
+        background-color: $textLightAccent;
+        border: 1px solid $textLightAccent;
+
+        &:hover{
+          background-color: $textLightAccent;
+          border: 1px solid $textLightAccent;
+        }
+
+        &:focus{
+          outline: none;
+          background-color: $textLightAccent;
+          border: 1px solid #ffffff;
+        }
+      }
+
+      &:hover{
+        background-color: $orchid;
+        border-color: $orchid;
+      }
+
+      &:focus{
+        outline: none;
+        background-color: $orchid;
+        border-color: #ffffff;
+      }
+    }
+  }
+}

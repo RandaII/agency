@@ -1,0 +1,31 @@
+@import "../../styles/variables";
+
+.founder-words{
+  padding-bottom: 260px;
+
+  .text-block{
+    max-width: 470px;
+    margin-top: 44px;
+  }
+
+  .bg-image{
+    img{
+      max-width: 570px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.founder-words{
+    padding-top: 100px;
+    padding-bottom: 80px;
+
+    .text-block{
+      margin-top: 0;
+    }
+
+    & h3.text-block__title{
+      @include h4;
+    }
+  }
+}

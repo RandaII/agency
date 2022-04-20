@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.our-awards{
+
+  .width-wrapper{
+    @include columnCenter;
+  }
+
+  .text-block{
+    max-width: none;
+  }
+
+  .simple-table{
+    margin-top: 67px;
+  }
+
+  &__more{
+    margin-top: 60px;
+
+    .link{
+      margin-left: 8px;
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section.our-awards{
+    padding-top: 90px;
+
+    .our-awards__more{
+      margin-top: 40px;
+    }
+  }
+}

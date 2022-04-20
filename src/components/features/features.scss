@@ -1,0 +1,25 @@
+.features{
+  padding-top: 140px;
+
+  .text-block{
+    margin-top: 70px;
+  }
+
+  .slide{
+    padding-bottom: 170px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .features{
+    padding-top: 30px;
+
+    .slide{
+      padding-bottom: 0;
+    }
+
+    .text-block{
+      margin-top: 0;
+    }
+  }
+}
