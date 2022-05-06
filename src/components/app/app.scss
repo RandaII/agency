@@ -615,14 +615,6 @@ a{
     & .link{
       @include bigText;
     }
-
-    &:first-child{
-      border-radius: $border-radius 0 0 $border-radius;
-    }
-
-    &:last-child{
-      border-radius:  0 $border-radius $border-radius 0;
-    }
   }
 
   &__image-title{
@@ -945,14 +937,19 @@ a{
 .testimonials-block{
   display: flex;
   flex-wrap: wrap;
-  border-top: 1px solid $mainAccentColor;
-  border-right: 1px solid $mainAccentColor;
+
+  &__container{
+    flex: 1 1 300px;
+  }
 
   &__item{
-    flex: 1 1 300px;
-    border-bottom: 1px solid $mainAccentColor;
-    border-left: 1px solid $mainAccentColor;
     padding: 48px;
+    box-shadow:
+            1px 0 0 0 $mainAccentColor,
+            0 1px 0 0 $mainAccentColor,
+            1px 1px 0 0 $mainAccentColor,
+            1px 0 0 0 $mainAccentColor inset,
+            0 1px 0 0 $mainAccentColor inset;
 
     &.active{
       background-color: #ffffff;
@@ -1015,7 +1012,12 @@ a{
   &__item{
     max-width: 391px;
     flex: 1 1 270px;
-    border: 1px solid $mainAccentColor;
+    box-shadow:
+            1px 0 0 0 $mainAccentColor,
+            0 1px 0 0 $mainAccentColor,
+            1px 1px 0 0 $mainAccentColor,
+            1px 0 0 0 $mainAccentColor inset,
+            0 1px 0 0 $mainAccentColor inset;
     box-sizing: border-box;
     padding: 48px;
 
