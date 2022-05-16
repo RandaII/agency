@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./video-reel.scss";
 
 const VideoReel = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `right-translate`);
+
   return (
     <section className="video-reel main-bgc">
-      <div className="width-wrapper">
-        <div className="slide">
+      <div className="width-wrapper inv-child">
+        <div className={`slide ${animation}`} ref={block}>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/oOkGmK3_Hdg" title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

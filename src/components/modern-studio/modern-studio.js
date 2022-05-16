@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./modern-studio.scss";
 
 import meta from "../../images/avatars/meta.png";
@@ -7,10 +8,14 @@ import modernStudioWebp from "../../images/slides/modern-studio.webp";
 import star from "../../images/icons/star3.svg";
 
 const ModernStudio = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`);
+
   return (
     <section className="modern-studio accent-bgc pt140">
       <div className="width-wrapper">
-        <div className="slide">
+        <div className={`slide inv-child ${animation}`} ref={block}>
           <div className="text-block accent">
             <h5 className="text-block__category category-title">Modern Studio</h5>
             <h1 className="text-block__title">We’re Help To Build Your
@@ -36,7 +41,7 @@ const ModernStudio = () =>{
             </picture>
           </div>
         </div>
-      </  div>
+      </div>
     </section>
   );
 }

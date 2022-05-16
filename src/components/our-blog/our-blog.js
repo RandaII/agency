@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./our-blog.scss";
 
 import agency from "../../images/articles/agency.jpg";
@@ -6,6 +7,10 @@ import outsource from "../../images/articles/outsource.jpg";
 import business from "../../images/articles/business.jpg";
 
 const OurBlog = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`);
+
   return (
     <section className="our-blog main-bgc pt140">
       <div className="width-wrapper">
@@ -17,7 +22,7 @@ const OurBlog = () =>{
           </div>
           <a href="#" className="action-button white">Discover All</a>
         </div>
-        <article className="article-block">
+        <article className={`article-block ${animation}`} ref={block}>
           <article className="article">
             <a href="#">
               <div className="article__img-wrapper">

@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./portfolio.scss";
 
 import sofa from "../../images/card-images/sofa.jpg";
@@ -7,14 +8,23 @@ import workMedia from "../../images/card-images/work-media.jpg";
 import dddone from "../../images/card-images/dddone.jpg";
 
 const Portfolio = () =>{
+
+  const cardsBlock = useRef();
+  const title = useRef();
+  const button = useRef();
+  const lastCard = useRef();
+
+  const cardAnimation = useIntersectionObserver([cardsBlock, title], `entering`);
+  const buttonAnimation = useIntersectionObserver([button, lastCard], `entering`);
+
   return (
     <section className="portfolio accent-bgc">
       <div className="width-wrapper">
         <div className="text-block accent">
           <h5 className="text-block__category category-title">Portfolio</h5>
-          <h2 className="text-block__title">Latest Work</h2>
+          <h2 className="text-block__title" ref={title}>Latest Work</h2>
         </div>
-        <ul className="category-nav">
+        <ul className={`category-nav ${cardAnimation}`}>
           <li>
             <a href="#" className="category-nav__item active">
               <span className="category-nav__title">Show All</span>
@@ -46,7 +56,7 @@ const Portfolio = () =>{
             </a>
           </li>
         </ul>
-        <ul className="image-cards">
+        <ul className= {`image-cards ${cardAnimation}`} ref={cardsBlock}>
           <li>
             <a href="#" className="image-cards__item">
               <div className="image-cards__item-wrapper">
@@ -80,7 +90,7 @@ const Portfolio = () =>{
               </div>
             </a>
           </li>
-          <li>
+          <li ref={lastCard}>
             <a href="#" className="image-cards__item">
               <div className="image-cards__item-wrapper">
                 <img src={dddone} alt="card image"/>
@@ -92,7 +102,7 @@ const Portfolio = () =>{
             </a>
           </li>
         </ul>
-        <a href="#" className="action-button">Explore More</a>
+        <a href="#" className= {`action-button ${buttonAnimation}`} ref={button}>Explore More</a>
       </div>
     </section>
   );

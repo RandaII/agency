@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./how-we-work.scss";
 
 const HowWeWork = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`);
+
   return (
     <section className="how-we-work main-bgc pt140">
       <div className="width-wrapper">
-        <div className="slide">
+        <div className={`slide ${animation}`} ref={block}>
           <div className="text-block main">
             <h5 className="text-block__category category-title">How we work</h5>
             <h3 className="text-block__title">Making Your Projects

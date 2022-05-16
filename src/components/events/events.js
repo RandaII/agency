@@ -1,16 +1,23 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./events.scss";
 
 const Events = () =>{
+
+  const titleRef = useRef();
+  const button = useRef();
+  const calendar = useRef();
+  const animation = useIntersectionObserver([calendar,titleRef, button], `entering`);
+
   return (
     <section className="events accent-bgc pt140">
       <div className="width-wrapper">
         <div className="text-block accent">
           <h5 className="text-block__category category-title">Events</h5>
-          <h2 className="text-block__title">Explore Future
+          <h2 className="text-block__title" ref={titleRef}>Explore Future
             Conferences</h2>
         </div>
-        <ul className="events-calendar accent">
+        <ul className={`events-calendar accent ${animation}`} ref={calendar}>
           <li className="events-calendar__item">
             <div className="events-calendar__date-section">
               <div className="events-calendar__date-block">
@@ -60,7 +67,7 @@ const Events = () =>{
             </div>
           </li>
         </ul>
-        <a href="#" className="action-button">Explore More</a>
+        <a href="#" className={`action-button ${animation}`} ref={button}>Explore More</a>
       </div>
     </section>
   );

@@ -49,6 +49,7 @@ a{
 .app-main > *{
   padding-left: var(--bodyHorizontalPadding);
   padding-right: var(--bodyHorizontalPadding);
+  overflow: hidden;
 }
 
 .accent-bgc{
@@ -183,6 +184,10 @@ a{
   &__text{
     @include bigText;
   }
+
+  &.entering{
+    animation: translateDown $mediumDuration ease-out forwards;
+  }
 }
 
 .action-button{
@@ -288,10 +293,21 @@ a{
       color: #ffffff;
     }
   }
+
+  &.entering{
+    opacity: 0;
+    animation: translateUp $mediumDuration ease-out $mediumDuration forwards;
+  }
 }
 
 .pt140{
   padding-top: 140px;
+}
+
+.inv-child{
+  > *{
+    opacity: 0;
+  }
 }
 
 .slide{
@@ -307,6 +323,31 @@ a{
     display: flex;
     flex-direction: column;
     position: relative;
+  }
+
+  &.entering{
+    > *:nth-child(1){
+      opacity: 0;
+      animation: rightAm $mediumDuration ease-out forwards;
+    }
+    > *:nth-child(2){
+      opacity: 0;
+      animation: leftAm $mediumDuration ease-out forwards;
+    }
+  }
+
+  &.translate-up{
+    animation: translateUpLong $mediumDuration ease-out $shortDuration forwards;
+  }
+
+  &.right-translate{
+    animation: rightTranslate 1s ease-out forwards,
+    showAm 0s ease-out forwards;
+  }
+
+  &.left-translate{
+    animation: leftTranslate 1s ease-out forwards,
+    showAm 0s ease-out forwards;;
   }
 
   .text-block{
@@ -594,6 +635,7 @@ a{
     box-sizing: border-box;
     padding: 48px;
     padding-top: 105px;
+    overflow: hidden;
 
     &.active{
       padding: 48px;
@@ -603,6 +645,14 @@ a{
     &.big{
       max-width: none;
       padding: 48px;
+    }
+  }
+
+  &.entering{
+    .cards-list__item{
+      >*{
+        animation: translateDown $mediumDuration ease-out $shortDuration forwards;
+      }
     }
   }
 
@@ -997,6 +1047,10 @@ a{
       margin-left: 0;
     }
   }
+
+  &.entering{
+    animation: translateUp $mediumDuration ease-out $shortDuration forwards;
+  }
 }
 
 .pricing-block{
@@ -1032,6 +1086,12 @@ a{
 
   .action-button{
     margin-top: 36px;
+  }
+
+  &.entering{
+    li{
+      animation: translateDown $mediumDuration ease-out $mediumDuration forwards;
+    }
   }
 }
 
@@ -1167,6 +1227,10 @@ a{
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+
+  &.entering{
+    @include scaleDownAm($shortDuration);
+  }
 }
 
 .article{

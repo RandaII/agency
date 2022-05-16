@@ -1,14 +1,19 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./about.scss";
 
 import about from "../../images/slides/about.png";
 import aboutWebp from "../../images/slides/about.webp";
 
 const About = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `translate-up`);
+
   return (
     <section className="about main-bgc">
-      <div className="width-wrapper">
-        <div className="slide fl-end">
+      <div className="width-wrapper inv-child">
+        <div className= {`slide fl-end ${animation}`} ref={block}>
           <div className="text-block main">
             <h5 className="text-block__category category-title">About</h5>
             <h2 className="text-block__title">An Experience

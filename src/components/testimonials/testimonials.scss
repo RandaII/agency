@@ -2,6 +2,7 @@
 
 .testimonials{
   padding-top: 100px;
+  padding-bottom: 10px;
 
   .width-wrapper{
     @include columnCenter;
@@ -10,5 +11,10 @@
   &-block,
   .action-button{
     margin-top: 64px;
+  }
+
+  .action-button,
+  .testimonials-block{
+    opacity: 0;
   }
 }

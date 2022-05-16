@@ -13,6 +13,12 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 10px;
+
+    &.entering{
+      li{
+        animation: translateDown $mediumDuration ease-out forwards;
+      }
+    }
   }
 
   li:not(:last-child){

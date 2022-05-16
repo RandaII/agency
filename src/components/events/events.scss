@@ -13,5 +13,10 @@
   .action-button,
   .events-calendar{
     margin-top: 64px;
+    opacity: 0;
+
+    &.entering{
+      @include translateUpAm($mediumDuration)
+    }
   }
 }

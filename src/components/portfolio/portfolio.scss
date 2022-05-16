@@ -14,13 +14,28 @@
 
   .image-cards{
     margin-top: 68px;
+    opacity: 0;
+
+    &.entering{
+      @include scaleDownAm;
+    }
   }
 
   .category-nav{
     margin-top: 35px;
+    opacity: 0;
+
+    &.entering{
+      @include scaleDownAm;
+    }
   }
 
   .action-button{
     margin-top: 64px;
+    opacity: 0;
+
+    &.entering{
+      @include translateUpAm();
+    }
   }
 }

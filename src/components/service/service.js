@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./service.scss";
 
 import murtaugh from "../../images/avatars/jenny-murtaugh.png";
 import service from "../../images/slides/service.png";
 import serviceWebp from "../../images/slides/service.webp";
+import {useIntersectionObserver} from "../../hooks";
 
 const Service = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`)
+
   return (
     <section className="service main-bgc">
       <div className="width-wrapper">
-        <div className="slide fl-end">
+        <div className={`slide fl-end inv-child ${animation}`} ref={block}>
           <div className="text-block main">
             <h5 className="text-block__category category-title">Service</h5>
             <h2 className="text-block__title">Making Complex
@@ -33,7 +38,7 @@ const Service = () =>{
               <img className="left" src={service} alt="slide image"/>
             </picture>
           </div>
-        </div>
+        </div >
       </div>
     </section>
   );

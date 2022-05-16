@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./testimonials.scss";
 
 import alan from "../../images/avatars/alan-martí.jpg";
 import richardo from "../../images/avatars/richardo-kann.png";
 import graham from "../../images/avatars/graham-griffiths.png";
 import maria from "../../images/avatars/maria-trofimova.png";
+import {useIntersectionObserver} from "../../hooks";
 
 const Testimonials = () =>{
+
+  const block = useRef();
+  const button = useRef();
+  const animation = useIntersectionObserver([block, button], `entering`)
+
   return (
     <section className="testimonials main-bgc">
       <div className="width-wrapper">
@@ -16,7 +22,7 @@ const Testimonials = () =>{
             Clients Saying</h2>
         </div>
 
-        <ul className="testimonials-block">
+        <ul className={`testimonials-block ${animation}`} ref={block}>
           <div className="testimonials-block__container">
             <li className="testimonials-block__item active">
               <div className="testimonials-block__rating star5"></div>
@@ -75,7 +81,7 @@ const Testimonials = () =>{
           </div>
         </ul>
 
-        <a href="#" className="action-button white">See All</a>
+        <a href="#" className={`action-button white ${animation}`} ref={button}>See All</a>
       </div>
     </section>
   );

@@ -1,14 +1,19 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./features.scss";
 
 import features from "../../images/slides/features.png";
 import featuresWebp from "../../images/slides/features.webp";
 
 const Features = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `left-translate`);
+
   return (
     <section className="features main-bgc">
-      <div className="width-wrapper">
-        <div className="slide">
+      <div className="width-wrapper inv-child">
+        <div className={`slide ${animation}`} ref={block}>
           <div className="text-block main">
             <h5 className="text-block__category category-title">Features</h5>
             <h2 className="text-block__title">Give Your Site

@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useRef} from "react";
 import "./service-list.scss";
 
 import professional from "../../images/icons/professional.svg";
+import {useIntersectionObserver} from "../../hooks";
 
 const ServiceList = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`);
+
   return (
     <section className="service-list main-bgc pt140">
       <div className="width-wrapper">
@@ -12,7 +17,7 @@ const ServiceList = () =>{
           <h3 className="text-block__title">How Our Agency
             Can Help</h3>
         </div>
-        <ul className="cards-list ai-s">
+        <ul className={`cards-list ai-s ${animation}`} ref={block}>
           <li className="cards-list__item big">
             <img src={professional} alt="card image" className="cards-list__img"/>
             <h4 className="cards-list__title">Design</h4>

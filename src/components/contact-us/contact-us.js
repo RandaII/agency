@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useRef} from "react";
+import {useIntersectionObserver} from "../../hooks";
 import "./contact-us.scss";
 
 import dreamProject from "../../images/slides/dream-project.png";
 import dreamProjectWebp from "../../images/slides/dream-project.webp";
 
 const ContactUs = () =>{
+
+  const block = useRef();
+  const animation = useIntersectionObserver(block, `entering`);
+
   return (
     <section className="contact-us main-bgc">
       <div className="width-wrapper">
-        <div className="slide accent-light-bgc">
-          <div className="slide__wrapper">
+        <div className={`slide accent-light-bgc ${animation}`} ref={block}>
+          <div className={`slide__wrapper`}>
             <div className="text-block accent">
               <h2 className="text-block__title">We’re Help
                 To Build Your
