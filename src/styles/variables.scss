@@ -180,7 +180,7 @@ $longDuration: .7s;
     opacity: 0;
   }
   100%{
-    opacity: 1;
+    opacity: var(--opacity);
   }
 }
 
@@ -203,7 +203,7 @@ $longDuration: .7s;
   }
 
   100%{
-    opacity: 1;
+    opacity: var(--opacity);
     transform: translate(0);
   }
 }

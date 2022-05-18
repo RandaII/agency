@@ -2,6 +2,7 @@
 
 :root{
   --bodyHorizontalPadding: 135px;
+  --opacity: 1;
 }
 
 body{
@@ -347,7 +348,7 @@ a{
 
   &.left-translate{
     animation: leftTranslate 1s ease-out forwards,
-    showAm 0s ease-out forwards;;
+    showAm 0s ease-out forwards;
   }
 
   .text-block{
@@ -1317,8 +1318,24 @@ a{
   }
 
   .slide{
-    .bg-image{
-      opacity: .3;
+
+    &.entering{
+      .bg-image{
+        opacity: 0;
+        --opacity: 0.3;
+        animation: leftAm $mediumDuration ease-out forwards;
+      }
+      .slide__wrapper .bg-image{
+        opacity: .3;
+        animation: none;
+      }
+    }
+
+    &.left-translate,
+    &.translate-up{
+      .bg-image{
+        opacity: .3;
+      }
     }
   }
 }
@@ -1359,12 +1376,29 @@ a{
     flex-direction: column;
 
     .bg-image {
-      opacity: 1;
       position: relative;
       order: -1;
 
       img {
         position: relative;
+      }
+    }
+
+    &.entering{
+      > .bg-image{
+        opacity: 0;
+        --opacity: 1;
+      }
+      .slide__wrapper .bg-image{
+        opacity: 1;
+        animation: none;
+      }
+    }
+
+    &.translate-up,
+    &.left-translate{
+      .bg-image{
+        opacity: 1;
       }
     }
   }
